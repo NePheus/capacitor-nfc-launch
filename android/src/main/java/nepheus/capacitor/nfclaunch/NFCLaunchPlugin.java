@@ -1,15 +1,15 @@
-package localhost.capacitor.ndefintent;
+package nepheus.capacitor.nfclaunch;
 
 import android.content.Intent;
 import android.nfc.NfcAdapter;
-
 import com.getcapacitor.JSObject;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.annotation.CapacitorPlugin;
 
-@CapacitorPlugin(name = "NDefIntent")
-public class NDefIntentPlugin extends Plugin {
-    private NDefIntent implementation = new NDefIntent();
+@CapacitorPlugin(name = "NFCLaunch")
+public class NFCLaunchPlugin extends Plugin {
+
+    private NFCLaunch implementation = new NFCLaunch();
 
     /**
      * Listen for ACTION_NDEF_DISCOVERED intents

@@ -4,7 +4,7 @@ export default {
     {
       file: 'dist/plugin.js',
       format: 'iife',
-      name: 'capacitorNDefIntent',
+      name: 'capacitorNFCLaunch',
       globals: {
         '@capacitor/core': 'capacitorExports',
       },
