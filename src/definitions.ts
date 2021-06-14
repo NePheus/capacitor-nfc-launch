@@ -1,10 +1,15 @@
 import { PluginListenerHandle } from '@capacitor/core';
 
 export interface NFCLaunchPlugin {
-    addListener(
-      eventName: 'message',
-      listenerFunc: MessageListener,
-    ): Promise<PluginListenerHandle> & PluginListenerHandle;
+  /**
+   * Add a listener to a NFC message event
+   * @param eventName
+   * @param listenerFunc
+   */
+  addListener(
+    eventName: 'message',
+    listenerFunc: MessageListener,
+  ): Promise<PluginListenerHandle> & PluginListenerHandle;
 }
 
-export type MessageListener = (data: any) => void;
+export type MessageListener = (response: any) => void;

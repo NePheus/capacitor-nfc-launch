@@ -1,8 +1,16 @@
+[![npm version](https://badge.fury.io/js/capacitor-nfc-launch.svg)](https://badge.fury.io/js/capacitor-nfc-launch)
+
 # capacitor-nfc-launch
 
 This plugin reads the message of a NFC tag. Just tap the device on a NFC tag and you will get the response in the 'message' listener. Your app will also start automatically and trigger the event listener.
 
-This is only implemented for Android by listening to new intents of the type 'ACTION_NDEF_DISCOVERED'.
+## Supported platforms
+
+| Platform | Supported |
+| -------- | --------: |
+| Android  |         ✔ |
+| iOS      |         ✖ |
+| Web      |         ✖ |
 
 ## Install
 
@@ -31,10 +39,46 @@ Data: 'My example data'
 
 app.component.ts
 
-```
+```javascript
 if (Capacitor.isNativePlatform()) {
-    NDefIntent.addListener('message', (data: any) => {
-        console.log(data.message); // Outputs: My example data
-    });
+  NDefIntent.addListener('message', (data: any) => {
+    console.log(data.message); // Outputs: My example data
+  });
 }
 ```
+
+## API
+
+<docgen-index>
+
+<docgen-api>
+<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
+
+### addListener(...)
+
+```typescript
+addListener(eventName: 'message', listenerFunc: MessageListener) => Promise<PluginListenerHandle> & PluginListenerHandle
+```
+
+Add a listener to a NFC message event
+
+| Param              | Type                                    |
+| ------------------ | --------------------------------------- |
+| **`eventName`**    | <code>"message"</code>                  |
+| **`listenerFunc`** | <code>(response: any) =&gt; void</code> |
+
+**Returns:** <code>any</code>
+
+--------------------
+
+
+### Interfaces
+
+
+#### PluginListenerHandle
+
+| Prop         | Type                      |
+| ------------ | ------------------------- |
+| **`remove`** | <code>() =&gt; any</code> |
+
+</docgen-api>
