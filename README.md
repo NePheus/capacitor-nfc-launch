@@ -41,8 +41,10 @@ Data: 'My example data'
 app.component.ts
 
 ```javascript
+import { NFCLaunch } from 'capacitor-nfc-launch';
+
 if (Capacitor.isNativePlatform()) {
-  NDefIntent.addListener('message', (data: any) => {
+  NFCLaunch.addListener('message', (data: any) => {
     console.log(data.message); // Outputs: My example data
   });
 }
