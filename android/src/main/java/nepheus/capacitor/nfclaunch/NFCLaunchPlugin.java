@@ -19,7 +19,7 @@ public class NFCLaunchPlugin extends Plugin {
     protected void handleOnNewIntent(Intent intent) {
         super.handleOnNewIntent(intent);
 
-        if (intent.getAction().equals(NfcAdapter.ACTION_NDEF_DISCOVERED)) {
+        if (NfcAdapter.ACTION_NDEF_DISCOVERED.equals(intent.getAction())) {
             JSObject ret = new JSObject();
             ret.put("message", implementation.readNDefMessage(intent));
             notifyListeners("message", ret, true);

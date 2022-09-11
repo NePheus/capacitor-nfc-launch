@@ -1,6 +1,6 @@
 {
   "name": "capacitor-nfc-launch",
-  "version": "4.0.0",
+  "version": "4.0.2",
   "description": "Launch the app by a NFC tag and read the data",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
