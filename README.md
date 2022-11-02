@@ -3,7 +3,7 @@
 
 # capacitor-nfc-launch
 
-This plugin reads the message of a NFC tag. Just tap the device on a NFC tag and you will get the response in the 'message' listener. Your app will also start automatically and trigger the event listener.
+This plugin reads the message of a self-written NFC tag. Just tap the device on a NFC tag and you will get the response in the 'message' listener. Your app will also start automatically and trigger the event listener.
 
 ## Supported platforms
 
@@ -26,6 +26,7 @@ AndroidManifest.xml
 <intent-filter android:autoVerify="true">
     <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
     <category android:name="android.intent.category.DEFAULT" />
+    // The plugin will only fire the event, if a NFC tag with this Content-Type has been sent
     <data android:mimeType="application/APPBUNDLEID" />
 </intent-filter>
 ```
