@@ -58,7 +58,7 @@ if (Capacitor.isNativePlatform()) {
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
-### addListener(...)
+### addListener('message', ...)
 
 ```typescript
 addListener(eventName: 'message', listenerFunc: MessageListener) => Promise<PluginListenerHandle> & PluginListenerHandle
@@ -66,10 +66,23 @@ addListener(eventName: 'message', listenerFunc: MessageListener) => Promise<Plug
 
 Add a listener to a NFC message event
 
-| Param              | Type                                    |
-| ------------------ | --------------------------------------- |
-| **`eventName`**    | <code>"message"</code>                  |
-| **`listenerFunc`** | <code>(response: any) =&gt; void</code> |
+| Param              | Type                                                        |
+| ------------------ | ----------------------------------------------------------- |
+| **`eventName`**    | <code>'message'</code>                                      |
+| **`listenerFunc`** | <code><a href="#messagelistener">MessageListener</a></code> |
+
+**Returns:** <code>any</code>
+
+--------------------
+
+
+### removeAllListeners()
+
+```typescript
+removeAllListeners() => any
+```
+
+Removes all listeners.
 
 **Returns:** <code>any</code>
 
@@ -84,5 +97,13 @@ Add a listener to a NFC message event
 | Prop         | Type                      |
 | ------------ | ------------------------- |
 | **`remove`** | <code>() =&gt; any</code> |
+
+
+### Type Aliases
+
+
+#### MessageListener
+
+<code>(response: any): void</code>
 
 </docgen-api>
